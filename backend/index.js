@@ -16,7 +16,7 @@ dotenv.config();
 app.use(express.json({ limit: '10mb' }))
 // Allow requests from localhost:3000
 app.use(cors({
-  origin: 'http://localhost:3000', // Allow your local development server
+  origin: 'https://67c969226c61820aede501cf--dashing-nougat-17c741.netlify.app', // Allow your local development server
 }));
 mongoose
     .connect(process.env.MONGO_URL, {
