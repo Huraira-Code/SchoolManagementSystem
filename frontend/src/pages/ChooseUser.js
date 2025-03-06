@@ -84,42 +84,43 @@ const ChooseUser = ({ visitor }) => {
 
   return (
     <StyledContainer>
+      
       <Container>
         <Grid container spacing={2} justifyContent="center">
-          <Grid item xs={12} sm={6} md={4}>
+          <Grid item xs={12} sm={12} md={12}>
             <div onClick={() => navigateHandler("Admin")}>
               <StyledPaper elevation={3}>
                 <Box mb={2}>
                   <AccountCircle fontSize="large" />
                 </Box>
                 <StyledTypography>
-                  Admin
+                  Administration Account
                 </StyledTypography>
                 Login as an administrator to access the dashboard to manage app data.
               </StyledPaper>
             </div>
           </Grid>
-          <Grid item xs={12} sm={6} md={4}>
+          <Grid item xs={12} sm={12} md={12}>
             <StyledPaper elevation={3}>
               <div onClick={() => navigateHandler("Student")}>
                 <Box mb={2}>
                   <School fontSize="large" />
                 </Box>
                 <StyledTypography>
-                  Student
+                  Student Account
                 </StyledTypography>
                 Login as a student to explore course materials and assignments.
               </div>
             </StyledPaper>
           </Grid>
-          <Grid item xs={12} sm={6} md={4}>
+          <Grid item xs={12} sm={12} md={12}>
             <StyledPaper elevation={3}>
               <div onClick={() => navigateHandler("Teacher")}>
                 <Box mb={2}>
                   <Group fontSize="large" />
                 </Box>
                 <StyledTypography>
-                  Teacher
+                  Teacher Account
                 </StyledTypography>
                 Login as a teacher to create courses, assignments, and track student progress.
               </div>
@@ -142,7 +143,7 @@ const ChooseUser = ({ visitor }) => {
 export default ChooseUser;
 
 const StyledContainer = styled.div`
-  background: linear-gradient(to bottom, #411d70, #19118b);
+  background: linear-gradient(to bottom,rgb(172, 59, 71),rgb(167, 9, 30));
   height: 120vh;
   display: flex;
   justify-content: center;
@@ -157,7 +158,7 @@ const StyledPaper = styled(Paper)`
   cursor:pointer;
 
   &:hover {
-    background-color: #2c2c6c;
+    background-color:rgb(88, 13, 13);
     color:white;
   }
 `;

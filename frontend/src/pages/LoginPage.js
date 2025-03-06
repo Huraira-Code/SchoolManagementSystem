@@ -5,7 +5,7 @@ import { Button, Grid, Box, Typography, Paper, Checkbox, FormControlLabel, TextF
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { Visibility, VisibilityOff } from '@mui/icons-material';
 import bgpic from "../assets/designlogin.jpg"
-import { LightPurpleButton } from '../components/buttonStyles';
+import { DarkRedButton, LightPurpleButton } from '../components/buttonStyles';
 import styled from 'styled-components';
 import { loginUser } from '../redux/userRelated/userHandle';
 import Popup from '../components/Popup';
@@ -123,9 +123,8 @@ const LoginPage = ({ role }) => {
 
     return (
         <ThemeProvider theme={defaultTheme}>
-            <Grid container component="main" sx={{ height: '100vh' }}>
-                <CssBaseline />
-                <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
+            <Grid style={{display:"flex" , justifyContent:"center"}} container component="main" sx={{ height: '100vh' }}>
+                <Grid style={{alignItems:"center"}} item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
                     <Box
                         sx={{
                             my: 8,
@@ -222,7 +221,7 @@ const LoginPage = ({ role }) => {
                                     Forgot password?
                                 </StyledLink>
                             </Grid>
-                            <LightPurpleButton
+                            <DarkRedButton
                                 type="submit"
                                 fullWidth
                                 variant="contained"
@@ -231,12 +230,12 @@ const LoginPage = ({ role }) => {
                                 {loader ?
                                     <CircularProgress size={24} color="inherit" />
                                     : "Login"}
-                            </LightPurpleButton>
+                            </DarkRedButton>
                             <Button
                                 fullWidth
                                 onClick={guestModeHandler}
                                 variant="outlined"
-                                sx={{ mt: 2, mb: 3, color: "#7f56da", borderColor: "#7f56da" }}
+                                sx={{ mt: 2, mb: 3, color: "rgb(101, 9, 9)", borderColor: "rgb(101, 9, 9)" }}
                             >
                                 Login as Guest
                             </Button>
@@ -255,20 +254,7 @@ const LoginPage = ({ role }) => {
                         </Box>
                     </Box>
                 </Grid>
-                <Grid
-                    item
-                    xs={false}
-                    sm={4}
-                    md={7}
-                    sx={{
-                        backgroundImage: `url(${bgpic})`,
-                        backgroundRepeat: 'no-repeat',
-                        backgroundColor: (t) =>
-                            t.palette.mode === 'light' ? t.palette.grey[50] : t.palette.grey[900],
-                        backgroundSize: 'cover',
-                        backgroundPosition: 'center',
-                    }}
-                />
+                
             </Grid>
             <Backdrop
                 sx={{ color: '#fff', zIndex: (theme) => theme.zIndex.drawer + 1 }}
@@ -287,5 +273,5 @@ export default LoginPage
 const StyledLink = styled(Link)`
   margin-top: 9px;
   text-decoration: none;
-  color: #7f56da;
+  color:rgb(14, 11, 20);
 `;
